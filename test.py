@@ -1,7 +1,10 @@
-a = lambda x: x * 2 + 1
-def b(b, x):
-    # return b(x + a(x))
-    return b(1)
-x = 3
-c= b(a, x)
-print(c)
+def f1(x):
+        return x + 1
+def f2(x):
+        return x * 2
+def f3(x):
+        return x + 3
+i = 1
+print(f[i](5))
+    
+

@@ -100,3 +100,18 @@ def cycle(f1, f2, f3):
     19
     """
     "*** YOUR CODE HERE ***"
+    def cycleC(cycle_count):
+        def computation(x):
+            sum = 0
+            i = 1
+            while i <= cycle_count:
+                if i%3 == 1:
+                    x = f1(x)
+                elif i%3 == 2:
+                    x = f2(x)
+                elif i%3 == 0:
+                    x = f3(x)
+                i += 1
+            return x
+        return computation
+    return cycleC
