@@ -13,9 +13,9 @@
         return n
     return strategy
   ```
-   这个时候执行一个 play(always_roll(5), .....)时，strategy0实际上指向了strategy函数，所以strategy0(score0,score1)是可行的
-2021-2-24
-  1 Lab 2: Higher Order Functions中的Q5: Lambda the Environment Diagram
+   这个时候执行一个 play(always_roll(5), .....)时，strategy0实际上指向了strategy函数，所以strategy0(score0,score1)是可行的  
+2021-2-24  
+  1 Lab 2: Higher Order Functions中的Q5: Lambda the Environment Diagram    
     ```
     a = lambda x: x * 2 + 1
     def b(b, x):
@@ -23,6 +23,6 @@
     x = 3
     b(a, x)
     ______
-    ```
+    ```  
   这个问题一开始也想了半天，一直把return b(x + a(x))中的b想成重新调用了一次b函数。之后想了下b(a, x)中的a只是指向了这个lanmbda函数还没调用，所以里面那个return b(x + a(x))
   到最后其实是a(x+a(x))
