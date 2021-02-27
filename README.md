@@ -40,4 +40,6 @@ Implement the make_averaged function, which is a higher-order function that take
 
 To implement this function, you need a new piece of Python syntax! You must write a function that accepts an arbitrary number of arguments, then calls another function using exactly those arguments. Here's how it works.
 
-Instead of listing formal parameters for a function, we write *args. To call another function using exactly those arguments, we call it again with *args. 
+Instead of listing formal parameters for a function, we write *args. To call another function using exactly those arguments, we call it again with *args.   
+  
+2.lab03里的递归题基本上都有点磕绊，有时候是basecase没想到比如 1和2是否是素数是确定的。 有时候是返回值的时候会犹豫，比如要最终返回一个计数值，实际上只要在每次递归回函数后面加上1就可以，递归思想还得继续练
