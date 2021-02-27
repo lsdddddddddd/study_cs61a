@@ -26,3 +26,18 @@
   ```  
   这个问题一开始也想了半天，一直把return b(x + a(x))中的b想成重新调用了一次b函数。之后想了下b(a, x)中的a只是指向了这个lanmbda函数还没调用，所以里面那个return b(x + a(x))
   到最后其实是a(x+a(x))
+2021-2-27  
+  1 hog项目的Problem 8，这题目主要还是难在没理解英文意思，一开始以为只是简单把函数作为参数传进执行X次算出平均值，后来发现敲代码前的test题目里有一个  
+  ···
+    from hog import *
+    dice = make_test_dice(3, 1, 5, 6)
+    averaged_roll_dice = make_averaged(roll_dice, 1000)
+    averaged_roll_dice(2, dice)
+  ···
+  这最后居然执行的时候还能继续传参，卡了我一会，知道要用args,但是直到代码都通了还是没正确翻译出这个题目啥意思。原题如下
+  Problem 8 (2 pt)
+Implement the make_averaged function, which is a higher-order function that takes a function fn as an argument. It returns another function that takes the same number of arguments as fn (the function originally passed into make_averaged). This returned function differs from the input function in that it returns the average value of repeatedly calling fn on the same arguments. This function should call fn a total of num_samples times and return the average of the results.
+
+To implement this function, you need a new piece of Python syntax! You must write a function that accepts an arbitrary number of arguments, then calls another function using exactly those arguments. Here's how it works.
+
+Instead of listing formal parameters for a function, we write *args. To call another function using exactly those arguments, we call it again with *args. 
