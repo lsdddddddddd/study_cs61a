@@ -34,7 +34,7 @@
     averaged_roll_dice = make_averaged(roll_dice, 1000)
     averaged_roll_dice(2, dice)
   ```
-  这最后居然执行的时候还能继续传参，卡了我一会，知道要用args,但是直到代码都通了还是没正确翻译出这个题目啥意思。原题如下
+  这最后居然执行的时候还能继续传参，卡了我一会，知道要用args,但是直到代码都通了还是没正确翻译出这个题目啥意思。原题如下  
   Problem 8 (2 pt)
 Implement the make_averaged function, which is a higher-order function that takes a function fn as an argument. It returns another function that takes the same number of arguments as fn (the function originally passed into make_averaged). This returned function differs from the input function in that it returns the average value of repeatedly calling fn on the same arguments. This function should call fn a total of num_samples times and return the average of the results.
 
