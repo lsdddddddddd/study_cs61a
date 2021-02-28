@@ -42,4 +42,21 @@ To implement this function, you need a new piece of Python syntax! You must writ
 
 Instead of listing formal parameters for a function, we write *args. To call another function using exactly those arguments, we call it again with *args.   
   
-2.lab03里的递归题基本上都有点磕绊，有时候是basecase没想到比如 1和2是否是素数是确定的。 有时候是返回值的时候会犹豫，比如要最终返回一个计数值，实际上只要在每次递归回函数后面加上1就可以，递归思想还得继续练
+2.lab03里的递归题基本上都有点磕绊，有时候是basecase没想到比如 1和2是否是素数是确定的。 有时候是返回值的时候会犹豫，比如要最终返回一个计数值，实际上只要在每次递归回函数后面加上1就可以，递归思想还得继续练  
+ #### 2021-2-28  
+  1.lab03完成了，一个小经验总结是一个函数体中不同情况下递归同一个函数（比如要计数满足条件+1 否则不加+1），最后也会能到一个总数，因为递归到最后能把最终结果带回到最后一个return上。比如代码里的不同情况下return helper. ps这个函数是算输入的n里包含几对能凑出总和为10的数字，一个数字能凑多对10
+   ```
+    def ten_pairs(n):
+      def helper(x):
+        if n < 10:
+            return 0
+        else:
+            if x == 0:
+                return ten_pairs(n//10)
+            else:
+                if n%10 + x%10 == 10:
+                    return helper(x//10)+1
+                else:
+                    return helper(x//10)
+    return helper(n//10)
+    ```
