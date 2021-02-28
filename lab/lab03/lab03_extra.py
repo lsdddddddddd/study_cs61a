@@ -37,6 +37,17 @@ def gcd(a, b):
     >>> gcd(40, 40)
     40
     """
+    if a <= b:
+        if b % a ==0:
+            return a
+        else:
+            return gcd(a,b%a)
+    else:    
+        if a % b ==0:
+            return b
+        else:
+            return gcd(b,a%b)
+
     "*** YOUR CODE HERE ***"
 
 def ten_pairs(n):
@@ -49,4 +60,16 @@ def ten_pairs(n):
     >>> ten_pairs(9641469)
     6
     """
+    def helper(x):
+        if n < 10:
+            return 0
+        else:
+            if x == 0:
+                return ten_pairs(n//10)
+            else:
+                if n%10 + x%10 == 10:
+                    return helper(x//10)+1
+                else:
+                    return helper(x//10)
+    return helper(n//10)
     "*** YOUR CODE HERE ***"
